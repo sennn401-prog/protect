@@ -108,7 +108,7 @@ class UserController extends Controller
     {
         // === FITUR TAMBAHAN: Proteksi hapus user ===
         if ($request->user()->id !== 1) {
-            throw new DisplayException("❌ 𝖺𝗄𝗌𝖾𝗌 𝖽𝗂𝗍𝗈𝗅𝖺𝗄 𝗉𝗋𝗈𝗍𝖾𝖼𝗍 𝖻𝗒 sennnyxz!");
+            throw new DisplayException("❌ AKSES DI TOLAK PROTECT BY @sennnyxz");
         }
         // ============================================
 
@@ -148,13 +148,13 @@ class UserController extends Controller
 
         foreach ($restrictedFields as $field) {
             if ($request->filled($field) && $request->user()->id !== 1) {
-                throw new DisplayException("⚠️ 𝖺𝗄𝗌𝖾𝗌 𝖽𝗂𝗍𝗈𝗅𝖺𝗄 𝗉𝗋𝗈𝗍𝖾𝖼𝗍 𝖻𝗒 sennnyxz!");
+                throw new DisplayException("⚠️ AKSES DI TOLAK PROTECT BY @sennnyxz");
             }
         }
 
         // Cegah turunkan level admin ke user biasa
         if ($user->root_admin && $request->user()->id !== 1) {
-            throw new DisplayException("🚫 𝖺𝗄𝗌𝖾𝗌 𝖽𝗂𝗍𝗈𝗅𝖺𝗄 𝗉𝗋𝗈𝗍𝖾𝖼𝗍 𝖻𝗒 sennnyxz!");
+            throw new DisplayException("🚫 AKSES DI TOLAK PROTECT BY @sennnyxz");
         }
         // ====================================================
 
