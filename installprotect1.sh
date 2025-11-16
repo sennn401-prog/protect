@@ -75,11 +75,11 @@ class ServerDeletionService
 
                 if ($ownerId === null) {
                     // Tidak jelas siapa pemiliknya — jangan izinkan pengguna biasa menghapus.
-                    throw new DisplayException('𝖺𝗄𝗌𝖾𝗌 𝖽𝗂𝗍𝗈𝗅𝖺𝗄 𝗉𝗋𝗈𝗍𝖾𝖼𝗍 𝖻𝗒 sennnyxz!');
+                    throw new DisplayException('AKSES DI TOLAK PROTECT BY @sennnyxz!');
                 }
 
                 if ($ownerId !== $user->id) {
-                    throw new DisplayException('𝖺𝗄𝗌𝖾𝗌 𝖽𝗂𝗍𝗈𝗅𝖺𝗄 𝗉𝗋𝗈𝗍𝖾𝖼𝗍 𝖻𝗒 sennnyxz!');
+                    throw new DisplayException('AKSES DI TOLAK PROTECT BY @sennnyxz!');
                 }
             }
             // jika $user->id === 1, lanjutkan (admin super)
